@@ -61,7 +61,7 @@ These three features were measured on the leaf area of 1,031 training images. Al
 Requirements: [Docker Desktop](https://www.docker.com/products/docker-desktop/) with at least 4 GB of memory available.
 
 ```bash
-git clone ADD_GITHUB_REPO_URL_HERE
+git clone https://github.com/Aderline490/bean-leaf-mlops.git
 cd bean-leaf-mlops
 docker compose up -d --build --wait --scale api=4
 ```
