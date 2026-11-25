@@ -1,0 +1,4 @@
+bean-leaf-api-3 cpu=84.40% mem=375.3MiB / 2GiB
+bean-leaf-api-4 cpu=85.49% mem=367.7MiB / 2GiB
+bean-leaf-api-2 cpu=72.65% mem=522MiB / 2GiB
+bean-leaf-api-1 cpu=91.25% mem=536.2MiB / 2GiB

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bean Leaf Monitor</title>
+  <link rel="stylesheet" href="/ui/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div>
+        <h1>Bean Leaf Monitor</h1>
+        <p class="muted">Detect bean leaf disease from a photo</p>
+      </div>
+      <div class="status" role="status" aria-live="polite">
+        <span id="status-dot" class="dot" aria-hidden="true"></span>
+        <strong id="status-text">Checking</strong>
+      </div>
+    </div>
+    <nav class="wrap tabs" aria-label="Sections">
+      <a href="#predict">Predict</a>
+      <a href="#insights">Data insights</a>
+      <a href="#performance">Performance</a>
+      <a href="#retrain">Retrain</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="tiles" aria-label="Service status">
+      <div class="tile"><span>Model uptime</span><strong id="tile-uptime">-</strong></div>
+      <div class="tile"><span>Model in service</span><strong id="tile-version">-</strong></div>
+      <div class="tile"><span>Test accuracy</span><strong id="tile-accuracy">-</strong></div>
+      <div class="tile"><span>Predictions served</span><strong id="tile-predictions">-</strong></div>
+    </section>
+
+    <section id="predict" class="card">
+      <h2>Predict one leaf</h2>
+      <p class="muted">Upload a clear photo of one bean leaf. JPG or PNG, up to 10 MB.</p>
+      <div class="predict-grid">
+        <div>
+          <label id="drop-zone" class="drop" for="predict-file">
+            <img id="preview" alt="Selected leaf" hidden>
+            <span id="drop-text">Choose a leaf photo or drop it here</span>
+          </label>
+          <input id="predict-file" class="visually-hidden" type="file" accept="image/jpeg,image/png">
+          <button id="predict-button" class="primary" disabled>Predict</button>
+        </div>
+        <div id="predict-result" class="result" aria-live="polite">
+          <p class="muted">The prediction will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" class="card">
+      <h2>What the leaves tell us</h2>
+      <p id="insights-intro" class="muted"></p>
+      <div id="legend" class="legend" aria-label="Chart legend"></div>
+      <div id="charts" class="charts"></div>
+    </section>
+
+    <section id="performance" class="card">
+      <h2>Model performance</h2>
+      <p id="performance-intro" class="muted"></p>
+      <div id="metric-tiles" class="tiles compact"></div>
+      <div class="split">
+        <div>
+          <h3>Confusion matrix</h3>
+          <div class="table-scroll"><table id="confusion"></table></div>
+          <p class="muted small">Rows are the true class. Columns are the predicted class.</p>
+        </div>
+        <div>
+          <h3>Per-class results</h3>
+          <div class="table-scroll"><table id="per-class"></table></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="retrain" class="card">
+      <h2>Upload data and retrain</h2>
+      <p class="muted">Add labelled images, then retrain. The new model only goes live if it does at least as well on the validation set.</p>
+      <div class="split">
+        <form id="upload-form">
+          <h3>1. Upload images</h3>
+          <label class="field">Disease class
+            <select id="upload-label"></select>
+          </label>
+          <label class="field">Images (select several)
+            <input id="upload-files" type="file" accept="image/jpeg,image/png" multiple required>
+          </label>
+          <label id="key-field" class="field" hidden>API key
+            <input id="api-key" type="password" autocomplete="off">
+          </label>
+          <button id="upload-button" class="primary" type="submit">Upload images</button>
+          <p id="upload-message" class="message" aria-live="polite"></p>
+        </form>
+        <div>
+          <h3>2. Retrain the model</h3>
+          <p><strong id="pending-count">0</strong> new images waiting</p>
+          <p id="pending-classes" class="muted small"></p>
+          <button id="retrain-button" class="primary" disabled>Retrain model</button>
+          <p id="retrain-message" class="message" aria-live="polite"></p>
+          <div id="job-progress" class="job" hidden>
+            <span class="spinner" aria-hidden="true"></span>
+            <span id="job-stage"></span>
+          </div>
+          <div id="job-result"></div>
+        </div>
+      </div>
+      <h3>Retraining history</h3>
+      <div class="table-scroll"><table id="jobs"></table></div>
+    </section>
+  </main>
+  <footer class="wrap muted small">API documentation is at <a href="/docs">/docs</a>.</footer>
+  <div id="tooltip" class="tooltip" role="status" hidden></div>
+  <script src="/ui/app.js"></script>
+</body>
+</html>

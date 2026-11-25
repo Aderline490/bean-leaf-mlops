@@ -1,0 +1,1 @@
+bean-leaf-api-1 cpu=101.01% mem=543.5MiB / 2GiB

@@ -1,0 +1,15 @@
+.git
+.venv
+.cache
+storage
+logs
+results
+notebook
+demo
+load_tests
+scripts
+**/__pycache__
+**/*.pyc
+**/.DS_Store
+.ipynb_checkpoints
+*.md

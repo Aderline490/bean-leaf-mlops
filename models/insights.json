@@ -1,0 +1,260 @@
+{
+  "images_total": 1034,
+  "images_measured": 1031,
+  "class_counts": {
+    "angular_leaf_spot": 345,
+    "bean_rust": 348,
+    "healthy": 341
+  },
+  "features": {
+    "yellowing_pct": {
+      "title": "Leaf yellowing",
+      "unit": "% of leaf",
+      "max": 48,
+      "edges": [
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        16.0,
+        20.0,
+        24.0,
+        28.0,
+        32.0,
+        36.0,
+        40.0,
+        44.0,
+        48.0
+      ],
+      "classes": {
+        "angular_leaf_spot": {
+          "n": 344,
+          "median": 7.11,
+          "q1": 2.138,
+          "q3": 19.05,
+          "share_pct": [
+            38.95,
+            12.21,
+            12.21,
+            6.4,
+            6.1,
+            4.07,
+            3.78,
+            3.2,
+            2.62,
+            1.45,
+            2.03,
+            6.98
+          ]
+        },
+        "bean_rust": {
+          "n": 346,
+          "median": 2.174,
+          "q1": 0.52,
+          "q3": 5.944,
+          "share_pct": [
+            66.18,
+            17.05,
+            6.94,
+            3.76,
+            2.02,
+            2.02,
+            0.29,
+            0.58,
+            0.87,
+            0.29,
+            0.0,
+            0.0
+          ]
+        },
+        "healthy": {
+          "n": 341,
+          "median": 1.534,
+          "q1": 0.469,
+          "q3": 3.729,
+          "share_pct": [
+            78.01,
+            17.01,
+            2.35,
+            1.47,
+            0.59,
+            0.29,
+            0.0,
+            0.29,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "story": "A typical angular leaf spot leaf is 7.1% yellow, about 4.6 times a healthy leaf (1.5%). Bean rust stays close to healthy at 2.2%, so yellowing points to angular leaf spot but cannot detect rust by itself."
+    },
+    "lesion_pct": {
+      "title": "Lesion coverage",
+      "unit": "% of leaf",
+      "max": 18,
+      "edges": [
+        0.0,
+        1.5,
+        3.0,
+        4.5,
+        6.0,
+        7.5,
+        9.0,
+        10.5,
+        12.0,
+        13.5,
+        15.0,
+        16.5,
+        18.0
+      ],
+      "classes": {
+        "angular_leaf_spot": {
+          "n": 344,
+          "median": 3.696,
+          "q1": 1.405,
+          "q3": 6.48,
+          "share_pct": [
+            27.33,
+            15.12,
+            17.73,
+            10.17,
+            11.63,
+            5.81,
+            2.91,
+            3.2,
+            2.62,
+            0.58,
+            1.16,
+            1.74
+          ]
+        },
+        "bean_rust": {
+          "n": 346,
+          "median": 2.456,
+          "q1": 0.745,
+          "q3": 5.261,
+          "share_pct": [
+            39.02,
+            17.05,
+            14.16,
+            10.4,
+            7.23,
+            3.18,
+            3.18,
+            1.73,
+            1.16,
+            1.16,
+            0.58,
+            1.16
+          ]
+        },
+        "healthy": {
+          "n": 341,
+          "median": 1.138,
+          "q1": 0.352,
+          "q3": 2.933,
+          "share_pct": [
+            56.3,
+            19.35,
+            10.56,
+            6.16,
+            4.69,
+            0.88,
+            0.88,
+            0.0,
+            0.88,
+            0.0,
+            0.0,
+            0.29
+          ]
+        }
+      },
+      "story": "Brown damage covers 3.7% of a typical angular leaf spot leaf and 2.5% of a bean rust leaf, against 1.1% for healthy leaves. The two diseases overlap heavily here, which helps explain why they are the hardest pair for the model to separate."
+    },
+    "speck_density": {
+      "title": "Surface specks",
+      "unit": "specks per 1,000 leaf pixels",
+      "max": 15,
+      "edges": [
+        0.0,
+        1.25,
+        2.5,
+        3.75,
+        5.0,
+        6.25,
+        7.5,
+        8.75,
+        10.0,
+        11.25,
+        12.5,
+        13.75,
+        15.0
+      ],
+      "classes": {
+        "angular_leaf_spot": {
+          "n": 344,
+          "median": 6.499,
+          "q1": 3.875,
+          "q3": 8.476,
+          "share_pct": [
+            6.4,
+            6.4,
+            11.05,
+            11.05,
+            12.79,
+            14.53,
+            13.66,
+            9.88,
+            6.69,
+            3.2,
+            1.74,
+            2.62
+          ]
+        },
+        "bean_rust": {
+          "n": 346,
+          "median": 4.299,
+          "q1": 2.861,
+          "q3": 6.772,
+          "share_pct": [
+            7.8,
+            12.43,
+            19.08,
+            17.34,
+            15.61,
+            8.09,
+            6.94,
+            4.91,
+            3.18,
+            1.16,
+            2.02,
+            1.45
+          ]
+        },
+        "healthy": {
+          "n": 341,
+          "median": 1.77,
+          "q1": 1.128,
+          "q3": 2.554,
+          "share_pct": [
+            29.03,
+            44.87,
+            19.06,
+            4.99,
+            0.88,
+            0.59,
+            0.29,
+            0.29,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "story": "Healthy leaves have about 1.8 small specks per 1,000 leaf pixels, compared with 4.3 for bean rust and 6.5 for angular leaf spot. Fine surface texture is the clearest of these three signals that a leaf is diseased, and it is the kind of detail a CNN can learn."
+    }
+  }
+}
